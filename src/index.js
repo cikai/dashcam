@@ -20,6 +20,10 @@ import Me from './me/index';
 // 记录仪相关
 import WifiConnecting from './recorder/wifi_connecting';
 import WifiUnconnected from './recorder/wifi_unconnected';
+import Capture from './recorder/capture';
+
+// 测试
+import Test from './Test';
 
 const RecorderStack = StackNavigator({
   Recorder: {
@@ -45,7 +49,8 @@ const RecorderStack = StackNavigator({
       headerTitleStyle: {
         fontSize: 20
       },
-      headerTintColor: '#FFFFFF'
+      headerTintColor: '#FFFFFF',
+      tabBarVisible: false
     }),
   },
   WifiUnconnected: {
@@ -58,7 +63,22 @@ const RecorderStack = StackNavigator({
       headerTitleStyle: {
         fontSize: 20
       },
-      headerTintColor: '#FFFFFF'
+      headerTintColor: '#FFFFFF',
+      tabBarVisible: false
+    }),
+  },
+  Capture: {
+    screen: Capture,
+    navigationOptions: ({navigation}) => ({
+      headerStyle: {
+        backgroundColor: '#00D7A0'
+      },
+      headerTitle: `记录仪`,
+      headerTitleStyle: {
+        fontSize: 20
+      },
+      headerTintColor: '#FFFFFF',
+      tabBarVisible: true
     }),
   }
 });
@@ -68,7 +88,7 @@ const App = TabNavigator({
     screen: RecorderStack,
     navigationOptions: {
       tabBarLabel: '记录仪',
-      tabBarIcon: ({ tintColor }) => (
+      tabBarIcon: ({tintColor}) => (
         <Image
           source={require('./images/tabs/recorder.png')}
           style={[style.icon, {tintColor: tintColor}]}
@@ -80,7 +100,7 @@ const App = TabNavigator({
     screen: Photo,
     navigationOptions: {
       tabBarLabel: '相册',
-      tabBarIcon: ({ tintColor }) => (
+      tabBarIcon: ({tintColor}) => (
         <Image
           source={require('./images/tabs/photo.png')}
           style={[style.icon, {tintColor: tintColor}]}
@@ -92,7 +112,19 @@ const App = TabNavigator({
     screen: Me,
     navigationOptions: {
       tabBarLabel: '我',
-      tabBarIcon: ({ tintColor }) => (
+      tabBarIcon: ({tintColor}) => (
+        <Image
+          source={require('./images/tabs/me.png')}
+          style={[style.icon, {tintColor: tintColor}]}
+        />
+      )
+    }
+  },
+  Test: {
+    screen: Test,
+    navigationOptions: {
+      tabBarLabel: '测试',
+      tabBarIcon: ({tintColor}) => (
         <Image
           source={require('./images/tabs/me.png')}
           style={[style.icon, {tintColor: tintColor}]}
