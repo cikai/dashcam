@@ -21,6 +21,7 @@ import Me from './me/index';
 import WifiConnecting from './recorder/wifi_connecting';
 import WifiUnconnected from './recorder/wifi_unconnected';
 import Capture from './recorder/capture';
+import DownloadVideo from './recorder/download_video';
 
 // 测试
 import Test from './Test';
@@ -80,7 +81,21 @@ const RecorderStack = StackNavigator({
       headerTintColor: '#FFFFFF',
       tabBarVisible: true
     }),
-  }
+  },
+  DownloadVideo: {
+    screen: DownloadVideo,
+    navigationOptions: ({navigation}) => ({
+      headerStyle: {
+        backgroundColor: '#00D7A0'
+      },
+      headerTitle: `下载视频`,
+      headerTitleStyle: {
+        fontSize: 20
+      },
+      headerTintColor: '#FFFFFF',
+      tabBarVisible: false
+    }),
+  },
 });
 
 const App = TabNavigator({

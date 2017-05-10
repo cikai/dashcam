@@ -43,7 +43,7 @@ const searchRecorderWifi = new Promise(function (resolve, reject) {
         for (i in wifiArray) {
           let result = "";
           let ssid = wifiArray[i].SSID;
-          result = ssid.match(/DV(.*?)\b/);
+          result = ssid.match(/TP(.*?)\b/);
           if (result) {
             resultSet.push(result.input);
           }

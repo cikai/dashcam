@@ -26,7 +26,7 @@ class Capture extends Component {
   }
 
   downloadVideo() {
-    ToastAndroid.show('下载视频', ToastAndroid.SHORT);
+    this.props.navigation.navigate("DownloadVideo");
   }
 
   changeFullScreen() {
@@ -38,7 +38,7 @@ class Capture extends Component {
       <View style={style.body}>
         <View style={{flex: 1, flexDirection: 'row'}}>
           <View style={style.video_box}>
-            <Image source={require('../images/capture/sample.png')} style={{width: 360, height: 240}}>
+            <Image source={require('../images/capture/sample.png')} style={{width: undefined, height: undefined}}>
               <View style={style.video_control}>
                 <TouchableOpacity onPress={this.changeRearview.bind(this)}>
                   <Image source={require('../images/capture/rearview.png')} style={{width: 50, height: 50}}/>
@@ -48,7 +48,8 @@ class Capture extends Component {
                          style={{width: 50, height: 50, marginTop: 10}}/>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.changeFullScreen.bind(this)}>
-                  <Image source={require('../images/capture/fullscreen.png')} style={{width: 50, height: 50, marginTop: 50}}/>
+                  <Image source={require('../images/capture/fullscreen.png')}
+                         style={{width: 50, height: 50, marginTop: 50}}/>
                 </TouchableOpacity>
               </View>
             </Image>
