@@ -11,8 +11,13 @@ import {
 class Test extends Component {
   render() {
     return (
-      <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-        <Button style={{flex: 1}} title={'连接失败'} onPress={() => this.props.navigation.navigate('WifiUnconnected')}/>
+      <View style={{flexDirection: 'column', justifyContent: 'flex-start'}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around', marginTop: 20}}>
+          <Button style={{flex: 1}} title={'连接失败'} onPress={() => this.props.navigation.navigate('WifiUnconnected')}/>
+        </View>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around', marginTop: 20}}>
+          <Button style={{flex: 1}} title={'capture'} onPress={() => this.props.navigation.navigate('Capture')}/>
+        </View>
       </View>
     );
   }
