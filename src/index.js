@@ -83,18 +83,7 @@ const RecorderStack = StackNavigator({
     }),
   },
   DownloadVideo: {
-    screen: DownloadVideo,
-    navigationOptions: ({navigation}) => ({
-      headerStyle: {
-        backgroundColor: '#00D7A0'
-      },
-      headerTitle: `下载视频`,
-      headerTitleStyle: {
-        fontSize: 20
-      },
-      headerTintColor: '#FFFFFF',
-      tabBarVisible: false
-    }),
+    screen: DownloadVideo
   },
 });
 

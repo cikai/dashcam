@@ -9,6 +9,8 @@ import {
   Image,
   ListView,
   StyleSheet,
+  ToastAndroid,
+  TouchableOpacity,
   TouchableWithoutFeedback
 } from 'react-native';
 
@@ -54,6 +56,29 @@ const filelist = [
 class DownloadVideo extends Component {
   state: { dataSource: any };
 
+  static navigationOptions = {
+    header: (
+      <View style={{
+        height: 50,
+        backgroundColor: '#00D7A0',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingTop: 10
+      }}>
+        <TouchableOpacity>
+          <Image source={require('../images/common/back-icon.png')}
+                 style={{width: 15, height: 15, marginLeft: 20, marginTop: 8}}/>
+        </TouchableOpacity>
+        <Text style={{fontSize: 20, color: '#FFFFFF'}}>下载视频</Text>
+        <TouchableOpacity onPress={this.multiSelect} style={{alignItems: 'flex-end'}}>
+          <Text style={{fontSize: 20, color: '#FFFFFF', marginRight: 20}}>选择</Text>
+        </TouchableOpacity>
+      </View>
+    ),
+    tabBarVisible: false,
+    swipeEnabled: false
+  };
+
   constructor(props: any) {
     super(props);
     const ds = new ListView.DataSource({
@@ -66,6 +91,10 @@ class DownloadVideo extends Component {
     };
     this._renderRow = this._renderRow.bind(this);
     this._renderSectionHeader = this._renderSectionHeader.bind(this);
+  }
+
+  multiSelect() {
+    ToastAndroid.show("多选", ToastAndroid.SHORT);
   }
 
   _changeVideoChecked() {
@@ -82,19 +111,40 @@ class DownloadVideo extends Component {
         <TouchableWithoutFeedback onPress={() => this._changeVideoChecked()}>
           <Image source={require('../images/download/poster01.png')}
                  style={styles.video_item}>
-            <Image source={checked_icon} style={styles.video_checked}/>
+            <View style={{alignItems: 'flex-end'}}>
+              <Image source={checked_icon} style={styles.video_checked}/>
+            </View>
+            <View style={styles.video_info}>
+              <Image source={require('../images/download/camera-icon.png')}
+                     style={styles.video_info_camera_icon}/>
+              <Text style={styles.video_info_text}>09:23</Text>
+            </View>
           </Image>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => this._changeVideoChecked()}>
           <Image source={require('../images/download/poster02.png')}
                  style={styles.video_item}>
-            <Image source={checked_icon} style={styles.video_checked}/>
+            <View style={{alignItems: 'flex-end'}}>
+              <Image source={checked_icon} style={styles.video_checked}/>
+            </View>
+            <View style={styles.video_info}>
+              <Image source={require('../images/download/camera-icon.png')}
+                     style={styles.video_info_camera_icon}/>
+              <Text style={styles.video_info_text}>10:11</Text>
+            </View>
           </Image>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => this._changeVideoChecked()}>
           <Image source={require('../images/download/poster01.png')}
                  style={styles.video_item}>
-            <Image source={checked_icon} style={styles.video_checked}/>
+            <View style={{alignItems: 'flex-end'}}>
+              <Image source={checked_icon} style={styles.video_checked}/>
+            </View>
+            <View style={styles.video_info}>
+              <Image source={require('../images/download/camera-icon.png')}
+                     style={styles.video_info_camera_icon}/>
+              <Text style={styles.video_info_text}>11:11</Text>
+            </View>
           </Image>
         </TouchableWithoutFeedback>
         {/*
@@ -148,12 +198,31 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 130,
     margin: 1,
-    alignItems: 'flex-end'
+    justifyContent: 'space-between'
   },
   video_checked: {
     margin: 5,
     width: 20,
     height: 20
+  },
+  video_info: {
+    height: 25,
+    marginTop: 75,
+    opacity: 0.6,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: '#000000'
+  },
+  video_info_camera_icon: {
+    width: 20,
+    height: 10,
+    margin: 8
+  },
+  video_info_text: {
+    fontSize: 15,
+    paddingTop: 3,
+    paddingRight: 2,
+    color: '#FFFFFF'
   }
 });
 
