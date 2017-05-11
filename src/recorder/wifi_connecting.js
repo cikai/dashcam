@@ -208,10 +208,9 @@ const style = StyleSheet.create({
   modal: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    paddingTop: 150
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
   modalBody: {
     justifyContent: 'center',

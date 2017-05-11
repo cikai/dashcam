@@ -7,6 +7,7 @@ import {
   View,
   Text,
   Image,
+  Modal,
   ListView,
   StyleSheet,
   ToastAndroid,
@@ -87,7 +88,9 @@ class DownloadVideo extends Component {
     });
     this.state = {
       dataSource: ds.cloneWithRowsAndSections(filelist),
-      isVideoChecked: false
+      isVideoChecked: false,
+      modalVisible: true,
+      process: 80
     };
     this._renderRow = this._renderRow.bind(this);
     this._renderSectionHeader = this._renderSectionHeader.bind(this);
@@ -173,9 +176,26 @@ class DownloadVideo extends Component {
 
   render() {
     return (
-      <ListView dataSource={this.state.dataSource}
-                renderRow={this._renderRow}
-                renderSectionHeader={this._renderSectionHeader}/>
+      <View>
+        <ListView dataSource={this.state.dataSource}
+                  renderRow={this._renderRow}
+                  renderSectionHeader={this._renderSectionHeader}/>
+        <Modal
+          animationType={"fade"}
+          transparent={true}
+          visible={this.state.modalVisible}
+          onRequestClose={() => {
+            this.setState({modalVisible: !this.state.modalVisible});
+          }}>
+          <View style={styles.modal}>
+            <View style={styles.modalBody}>
+              <View style={styles.modalContent}>
+                <Text style={{flex: 1, fontSize: 20, textAlign: 'center'}}>正在下载... ( {this.state.process}% )</Text>
+              </View>
+            </View>
+          </View>
+        </Modal>
+      </View>
     );
   }
 }
@@ -223,6 +243,28 @@ const styles = StyleSheet.create({
     paddingTop: 3,
     paddingRight: 2,
     color: '#FFFFFF'
+  },
+  modal: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)'
+  },
+  modalBody: {
+    justifyContent: 'center',
+    backgroundColor: '#FFFFFF',
+    margin: 20,
+    width: 300,
+    height: 120,
+    borderRadius: 10
+  },
+  modalContent: {
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    width: 280,
+    height: 100,
+    padding: 20
   }
 });
 
