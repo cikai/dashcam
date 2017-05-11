@@ -28,59 +28,16 @@ import Test from './Test';
 
 const RecorderStack = StackNavigator({
   Recorder: {
-    screen: Recorder,
-    navigationOptions: ({navigation}) => ({
-      headerStyle: {
-        backgroundColor: '#00D7A0'
-      },
-      headerTitle: `记录仪`,
-      headerTitleStyle: {
-        fontSize: 20
-      },
-      headerTintColor: '#FFFFFF'
-    }),
+    screen: Recorder
   },
   WifiConnecting: {
-    screen: WifiConnecting,
-    navigationOptions: ({navigation}) => ({
-      headerStyle: {
-        backgroundColor: '#00D7A0'
-      },
-      headerTitle: `连接Wi-Fi`,
-      headerTitleStyle: {
-        fontSize: 20
-      },
-      headerTintColor: '#FFFFFF',
-      tabBarVisible: false
-    }),
+    screen: WifiConnecting
   },
   WifiUnconnected: {
-    screen: WifiUnconnected,
-    navigationOptions: ({navigation}) => ({
-      headerStyle: {
-        backgroundColor: '#00D7A0'
-      },
-      headerTitle: `连接Wi-Fi`,
-      headerTitleStyle: {
-        fontSize: 20
-      },
-      headerTintColor: '#FFFFFF',
-      tabBarVisible: false
-    }),
+    screen: WifiUnconnected
   },
   Capture: {
-    screen: Capture,
-    navigationOptions: ({navigation}) => ({
-      headerStyle: {
-        backgroundColor: '#00D7A0'
-      },
-      headerTitle: `记录仪`,
-      headerTitleStyle: {
-        fontSize: 20
-      },
-      headerTintColor: '#FFFFFF',
-      tabBarVisible: true
-    }),
+    screen: Capture
   },
   DownloadVideo: {
     screen: DownloadVideo

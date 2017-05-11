@@ -13,6 +13,22 @@ import {
 } from 'react-native';
 
 class Capture extends Component {
+  static navigationOptions = {
+    header: (
+      <View style={{
+        height: 50,
+        backgroundColor: '#00D7A0',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        paddingTop: 10
+      }}>
+        <Text style={{fontSize: 20, color: '#FFFFFF'}}>记录仪</Text>
+      </View>
+    ),
+    tabBarVisible: true,
+    swipeEnabled: false
+  };
+
   constructor(props) {
     super(props);
   }

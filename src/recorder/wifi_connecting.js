@@ -60,6 +60,29 @@ const searchRecorderWifi = new Promise(function (resolve, reject) {
 });
 
 class WifiConnecting extends Component {
+  static navigationOptions = {
+    header: (
+      <View style={{
+        height: 50,
+        backgroundColor: '#00D7A0',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingTop: 10
+      }}>
+        <TouchableOpacity>
+          <Image source={require('../images/common/back-icon.png')}
+                 style={{width: 15, height: 15, marginLeft: 20, marginTop: 8}}/>
+        </TouchableOpacity>
+        <Text style={{fontSize: 20, color: '#FFFFFF'}}>连接Wi-Fi</Text>
+        <TouchableWithoutFeedback>
+          <View><Text></Text></View>
+        </TouchableWithoutFeedback>
+      </View>
+    ),
+    tabBarVisible: false,
+    swipeEnabled: false
+  };
+
   constructor(props) {
     super(props);
     this.state = {
