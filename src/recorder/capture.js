@@ -71,9 +71,9 @@ class Capture extends Component {
             </Image>
           </View>
         </View>
-        <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center'}}>
+        <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center',}}>
           <TouchableOpacity style={style.capture_button} onPress={this.startCapture.bind(this)}>
-            <Image source={require('../images/capture/capture-button.png')} style={{width: 100, height: 100}}/>
+            <Image source={require('../images/capture/capture-button.png')} style={{width: 80, height: 80}}/>
             <Text style={{color: '#AAA', fontSize: 18, justifyContent: 'center', textAlign: 'center', marginTop: 20}}>点击拍照</Text>
           </TouchableOpacity>
         </View>
@@ -97,7 +97,6 @@ const style = StyleSheet.create({
     justifyContent: 'center'
   },
   capture_button: {
-    flex: 1,
     justifyContent: 'center'
   },
   video_control: {

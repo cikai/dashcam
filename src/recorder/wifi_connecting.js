@@ -16,7 +16,7 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback
 } from 'react-native';
-import { NavigationActions } from 'react-navigation'
+import { NavigationActions } from 'react-navigation';
 
 import wifi from 'react-native-android-wifi';
 
@@ -71,7 +71,7 @@ class WifiConnecting extends Component {
       }}>
         <TouchableOpacity>
           <Image source={require('../images/common/back-icon.png')}
-                 style={{width: 15, height: 15, marginLeft: 20, marginTop: 8}}/>
+                 style={{width: 8, height: 14, marginLeft: 20, marginTop: 8}}/>
         </TouchableOpacity>
         <Text style={{fontSize: 20, color: '#FFFFFF'}}>连接Wi-Fi</Text>
         <TouchableWithoutFeedback>

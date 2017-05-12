@@ -1,5 +1,5 @@
 /**
- * Created by cikai on 5/8/17.
+ * Created by cikai on 5/11/17.
  */
 
 import React, { Component } from 'react';
@@ -8,14 +8,14 @@ import {
   Text
 } from 'react-native';
 
-class Photo extends Component {
+class Advice extends Component {
   render() {
     return (
       <View>
-        <Text>Photo</Text>
+        <Text>Advice</Text>
       </View>
     );
   }
 }
 
-export default Photo;
+export default Advice;

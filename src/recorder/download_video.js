@@ -68,11 +68,11 @@ class DownloadVideo extends Component {
       }}>
         <TouchableOpacity>
           <Image source={require('../images/common/back-icon.png')}
-                 style={{width: 15, height: 15, marginLeft: 20, marginTop: 8}}/>
+                 style={{width: 8, height: 14, marginLeft: 20, marginTop: 8}}/>
         </TouchableOpacity>
         <Text style={{fontSize: 20, color: '#FFFFFF'}}>下载视频</Text>
         <TouchableOpacity onPress={this.multiSelect} style={{alignItems: 'flex-end'}}>
-          <Text style={{fontSize: 20, color: '#FFFFFF', marginRight: 20}}>选择</Text>
+          <Text style={{fontSize: 18, color: '#FFFFFF', marginRight: 20}}>选择</Text>
         </TouchableOpacity>
       </View>
     ),
